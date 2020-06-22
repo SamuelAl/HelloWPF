@@ -6,12 +6,21 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:HelloWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="175" Width="250">
     <Window.Resources>
-        <sys:String x:Key="strHelloWorld">Hello, world</sys:String>
+        <sys:String x:Key="strWindow">Hello, Window world! </sys:String>
     </Window.Resources>
-    <Grid Name="pnlMainGrid" MouseUp="pnlMainGrid_MouseUp"  Background="LightBlue">
-        <TextBlock Text="{StaticResource strHelloWorld}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" />
-        <TextBlock HorizontalAlignment="Center" >Just another "<TextBlock Text="{StaticResource strHelloWorld}" />" example, but with resources!</TextBlock>
-    </Grid>
+    <DockPanel Margin="10" Name="pnlMain">
+        <DockPanel.Resources>
+            <sys:String x:Key="strPanel">Hello, Panel world!</sys:String>
+        </DockPanel.Resources>
+
+        <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="10">
+            <Button Name="btnClickMe" Click="btnClickMe_Click">Click Me!</Button>
+        </WrapPanel>
+
+        <ListBox Name="lbResult" />
+
+    </DockPanel>
+    
 </Window>

@@ -23,17 +23,15 @@ namespace HelloWPF
         public MainWindow()
         {
             InitializeComponent();
-            pnlMainGrid.MouseDown += new MouseButtonEventHandler(pnlMainGrid_MouseDown);
+            
         }
 
-        private void pnlMainGrid_MouseDown(object sender, MouseButtonEventArgs e)
+       
+        private void btnClickMe_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("You clicked me down at " + e.GetPosition(this).ToString());
-        }
-
-        private void pnlMainGrid_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("You clicked me at " + e.GetPosition(this).ToString());
+            lbResult.Items.Add(pnlMain.FindResource("strPanel").ToString());
+            lbResult.Items.Add(this.FindResource("strWindow").ToString());
+            lbResult.Items.Add(Application.Current.FindResource("strApp").ToString());
         }
     }
 }
