@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,11 +29,12 @@ namespace HelloWPF
         }
 
        
-        private void btnClickMe_Click(object sender, RoutedEventArgs e)
+        
+        private void CultureInfoSwitchButton_Click(object sender, RoutedEventArgs e)
         {
-            lbResult.Items.Add(pnlMain.FindResource("strPanel").ToString());
-            lbResult.Items.Add(this.FindResource("strWindow").ToString());
-            lbResult.Items.Add(Application.Current.FindResource("strApp").ToString());
+            Thread.CurrentThread.CurrentCulture = new CultureInfo((sender as Button).Tag.ToString());
+            lblNumber.Content = (123456789.42d).ToString("N2");
+            lblDate.Content = DateTime.Now.ToString();
         }
     }
 }

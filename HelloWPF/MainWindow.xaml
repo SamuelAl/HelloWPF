@@ -6,21 +6,38 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:HelloWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="175" Width="250">
-    <Window.Resources>
-        <sys:String x:Key="strWindow">Hello, Window world! </sys:String>
-    </Window.Resources>
-    <DockPanel Margin="10" Name="pnlMain">
-        <DockPanel.Resources>
-            <sys:String x:Key="strPanel">Hello, Panel world!</sys:String>
-        </DockPanel.Resources>
+        Title="ApplicationCultureSwitchExample" Height="200" Width="320">
 
-        <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="10">
-            <Button Name="btnClickMe" Click="btnClickMe_Click">Click Me!</Button>
-        </WrapPanel>
-
-        <ListBox Name="lbResult" />
-
-    </DockPanel>
+    <StackPanel Margin="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label>Number:</Label>
+            <Label Name="lblNumber" Grid.Column="1" />
+            <Label Grid.Row="1">Date:</Label>
+            <Label Name="lblDate" Grid.Row="1" Grid.Column="1" />
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0.20 20 0.20 5">
+            <Button Tag="en-US" Click="CultureInfoSwitchButton_Click" 
+                    HorizontalContentAlignment="Stretch">
+                English (US)
+            </Button>
+            <Button Tag="de-DE" Click="CultureInfoSwitchButton_Click" 
+                    HorizontalContentAlignment="Stretch" Margin="10.0 0 10.0 0">
+                German (DE)
+            </Button>
+            <Button Tag="sv-SE" Click="CultureInfoSwitchButton_Click" 
+                    HorizontalContentAlignment="Stretch">
+                Swedish (SE)
+            </Button>
+        </StackPanel>
+    </StackPanel>
+    
     
 </Window>

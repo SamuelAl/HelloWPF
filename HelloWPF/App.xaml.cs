@@ -16,9 +16,8 @@ namespace HelloWPF
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             // Create the startup window
-            MainWindow window = new MainWindow();
-            // Do stuff here, e.g. to the window
-            window.Title = "New Title";
+            LabelControlSample window = new LabelControlSample();
+
             // Show the window
             window.Show();
         }
