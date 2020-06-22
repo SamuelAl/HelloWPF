@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:HelloWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72">
+    <Grid Name="pnlMainGrid" MouseUp="pnlMainGrid_MouseUp"  Background="LightBlue">
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60">
             Hello WPF!
         </TextBlock>
+        
     </Grid>
 </Window>
